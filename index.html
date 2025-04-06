@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Cute Confession 💖</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="hearts"></div> <!-- Floating hearts container -->
+
+  <div class="container">
+    <h1 class="title">Hey You 💌</h1>
+    <p class="message">I’ve been wanting to tell you something...</p>
+    <div class="confession-box">
+      <p class="typing-text">✨ I think you’re amazing... and I kinda like you. ✨</p>
+    </div>
+    <button class="reply-btn" onclick="alert('Aww! You’re the sweetest 💕')">Aww 🥺</button>
+  </div>
+
+  <script>
+    // Typing animation
+    const text = document.querySelector('.typing-text');
+    const fullText = text.textContent;
+    let index = 0;
+    text.textContent = '';
+
+    function typeLetter() {
+      if (index < fullText.length) {
+        text.textContent += fullText.charAt(index);
+        index++;
+        setTimeout(typeLetter, 60);
+      }
+    }
+
+    window.onload = typeLetter;
+  </script>
+</body>
+</html>
